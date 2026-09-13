@@ -1,0 +1,109 @@
+{
+  "name": "agentgrid-zed",
+  "displayName": "Zed IDE Terminal",
+  "version": "0.1.0",
+  "description": "Zed IDE terminal themes and settings for AgentGrid terminals — loads your real Zed config.",
+  "publisher": "agentgrid",
+  "main": "dist/extension.js",
+  "renderer": "dist/renderer.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agent-grid/agentgrid-zed-extension"
+  },
+  "categories": [
+    "Themes",
+    "Terminal"
+  ],
+  "engines": {
+    "agentgrid": ">=2.8.0"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "id": "zed-ayu-dark",
+        "label": "Zed Ayu Dark",
+        "description": "Ayu Dark theme from Zed IDE",
+        "swatch": {
+          "bg": "#0b0e14",
+          "primary": "#59c2ff",
+          "text": "#bfbdb6"
+        },
+        "tokens": {
+          "--bg-app": "#0b0e14",
+          "--bg-card": "#0d1017",
+          "--bg-surface": "#131721",
+          "--bg-hover": "#1c2029",
+          "--text-primary": "#bfbdb6",
+          "--text-secondary": "#565b66",
+          "--text-muted": "#3d424d",
+          "--border-default": "#1c2029",
+          "--border-strong": "#2d323c",
+          "--accent-blue": "#59c2ff",
+          "--accent-green": "#7fd962",
+          "--accent-red": "#d95757",
+          "--accent-yellow": "#e6b450",
+          "--accent-purple": "#d2a6ff"
+        }
+      },
+      {
+        "id": "zed-one-light",
+        "label": "Zed One Light",
+        "description": "One Light theme from Zed IDE",
+        "swatch": {
+          "bg": "#fafafa",
+          "primary": "#4078f2",
+          "text": "#383a42"
+        },
+        "tokens": {
+          "--bg-app": "#fafafa",
+          "--bg-card": "#ffffff",
+          "--bg-surface": "#f0f0f0",
+          "--bg-hover": "#e5e5e6",
+          "--text-primary": "#383a42",
+          "--text-secondary": "#696c77",
+          "--text-muted": "#a0a1a7",
+          "--border-default": "#d3d4d8",
+          "--border-strong": "#b8b9bd",
+          "--accent-blue": "#4078f2",
+          "--accent-green": "#50a14f",
+          "--accent-red": "#e45649",
+          "--accent-yellow": "#c18401",
+          "--accent-purple": "#a626a4"
+        }
+      }
+    ],
+    "terminalEngines": [
+      {
+        "id": "zed",
+        "label": "Zed IDE",
+        "description": "Zed IDE terminal — loads your real Zed config and theme"
+      }
+    ],
+    "commands": [
+      {
+        "command": "zed.applyTerminalTheme",
+        "title": "Apply Zed Terminal Theme",
+        "category": "Zed"
+      },
+      {
+        "command": "zed.importConfig",
+        "title": "Import Zed Config",
+        "category": "Zed"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node build-renderer.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.9.0"
+  }
+}
